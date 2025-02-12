@@ -15,7 +15,7 @@ The following packets are sent from the radio to the host:
 ```c
 struct {
     u8 ID;       // 0x64
-    u8 fontSize;
+    u8 fontSize; // 0 - Small (6x8), 1 = Medium (8x8), 2 = Large (8x16), 3 = Huge (16x16)
     u8 x;        // Location
     u8 y;
     u16 fgColor; // Foreground color (see Color Encoding below)
