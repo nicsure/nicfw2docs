@@ -20,7 +20,7 @@ struct {
     u8 y;
     u16 fgColor; // Foreground color (see Color Encoding below)
     u16 bgColor; // Background color
-    char[] text; // Null-terminated variable-length string
+    char text[]; // Null-terminated variable-length string
 } displayTextPacket;
 ```
 
