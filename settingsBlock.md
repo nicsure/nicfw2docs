@@ -1,9 +1,9 @@
 ```c
 typedef struct {
-    u16 magic;                  // 0x00
+    u16 magic;                  // 0x00 value = 0xD82F
     u8 squelch;                 // 0x02
     u8 dualWatch;               // 0x03
-    u8 autoFloor;               // 0x04
+    u8 autoFloor;               // 0x04 (not used)
     u8 activeVfo;               // 0x05
     u16 step;                   // 0x06
     u16 rxSplit;                // 0x08
@@ -26,10 +26,10 @@ typedef struct {
     u8 gamma;                   // 0x1d
     u16 repeaterTone;           // 0x1e
     struct {                    // 0x20
-        u8 group;
+        u8 group; // 0 means channel mode, 1-15 means group mode
         u8 lastGroup;
         u8 groupModeChannels[16];
-        u8 mode;
+        u8 mode; // 0=VFO Mode, 1=Channel/Group Mode
     } vfoState[2];
     u8 keyLock;                 // 0x46
     u8 bluetooth;               // 0x47
