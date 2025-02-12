@@ -11,7 +11,7 @@ struct {
     channelInfo vfoA; // 0x0000
     channelInfo vfoB; // 0x0020
     channelInfo memoryChannels[198]; // 0x0040
-    settingsData; // 0x1900
+    settingsBlock; // 0x1900
     ...
     uint16_t bandplanMagic; // 0x1A00, value = 0xA46D
     bandPlan bandPlans[20]; // 0x1A02
