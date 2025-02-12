@@ -72,6 +72,7 @@ struct {
 struct {
     u8 ID;              // 0x67
     u8 signalStrength;  // Range: 0-120 (values >120 capped to 120)
+    u8 mode;            // 0=Rx, 1=Tx
 } signalStrengthPacket;
 ```
 
@@ -80,6 +81,7 @@ struct {
 struct {
     u8 ID;         // 0x68
     u8 noiseLevel; // Range: 0-120 (values >120 capped to 120)
+    u8 mode;       // 0=Rx, 1=Tx (tx mod meter)
 } noiseLevelPacket;
 ```
 
