@@ -130,8 +130,8 @@ The host sends **single-byte packets** that represent keypad presses. The radio 
 | `0x8F` | # Key |
 | `0x90` | PTT-A Key |
 | `0x91` | PTT-B Key |
-| `0x92` | PTT-E Key (external mic PTT) |
-| `0x93` | Flashlight Key |
+| `0x92` | Flashlight Key |
+| `0x93` | PTT-E Key (external mic PTT) |
 
 ### Key Release Event (Packet ID: `0xFF`)
 - `0xFF` = No Key (release)
