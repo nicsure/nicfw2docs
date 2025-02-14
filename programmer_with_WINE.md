@@ -76,6 +76,7 @@ cd ~/nicfwprog
 wget https://nicsure.co.uk/h3/programmerv2s.zip
 ```
 _Note: If your distro warns about SSL certificates, follow `wget`’s instructions to bypass authentication._
+
 3. Unzip the file:
 ```bash
 unzip programmerv2s.zip
