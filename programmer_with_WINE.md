@@ -15,7 +15,7 @@ To allow access to serial ports, check if you are already in the `dialout` group
 ```bash
 groups
 ```
-If you see `dialout` in the output (e.g., `username adm dialout cdrom sudo dip plugdev users lpadmin`), proceed to 'Installing .NET Runtime'.
+If you see `dialout` in the output (e.g., `username adm dialout cdrom sudo dip plugdev users lpadmin`), proceed to 'Installing WINE'.
 
 If `dialout` is missing, add yourself to the group:
 ```bash
@@ -29,7 +29,7 @@ Check your current WINE version:
 ```bash
 wine --version
 ```
-If it reports `wine-10.0` or later, skip to **Step 4: Install .NET Runtime**.
+If it reports `wine-10.0` or later, skip to 'Install .NET Runtime'.
 
 Otherwise, remove any old versions of WINE:
 ```bash
