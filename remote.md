@@ -113,6 +113,26 @@ Bit: FEDCBA9876543210
 - **G (Green)**: 6 bits
 - **R (Red)**: 5 bits
 
+```c
+typedef union
+{
+    u16 value;
+    struct
+    {
+        u16 r : 5;
+        u16 g_lo : 3; // needs to be split as C Compilers don't like bit fields that span byte boundaries
+        u16 g_hi : 3;
+        u16 b : 5;
+    } RGB;
+    struct
+    {
+        // c2 = bbbbbggg
+        // c1 = gggrrrrr
+        u8 c1;
+        u8 c2;
+    } bytes;
+} COLOR;
+```
 ---
 
 ## Host to Radio Packets
