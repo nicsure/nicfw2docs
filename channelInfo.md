@@ -11,10 +11,10 @@ typedef struct
         u16 value;
         struct
         {
-            u16 g0 : 4;
-            u16 g1 : 4;
-            u16 g2 : 4;
-            u16 g3 : 4;
+            u16 g0 : 4; // (mask 0x000F)
+            u16 g1 : 4; // (mask 0x00F0)
+            u16 g2 : 4; // (mask 0x0F00)
+            u16 g3 : 4; // (mask 0xF000)
         } single;
     } groups;
     struct
