@@ -12,3 +12,6 @@ typedef struct
         u8 bandwidth : 3;
     } bits;
 } bandPlan;
+```
+
+Note: Bandplan comments are purely client-side.
