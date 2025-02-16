@@ -159,9 +159,10 @@ The host sends **single-byte packets** that represent keypad presses. The radio 
 
 ---
 
-### Desync Protection
-Every Radio->Host packet with the exception of LED statuses is padded at the end with two null bytes (0x00). These are NOP bytes and should be ignored (see main protocol documentation). Their purpose is to fill the gaps created by occasional "lost" bytes to prevent the entire conversation between the Radio and the PC going out of syncronization.
+## Desync Protection
+Every packet sent from the Radio to the Host, except for LED status updates, is padded with two null bytes (0x00) at the end. These bytes act as no-operations (NOP) and should be ignored (refer to the main protocol documentation). Their purpose is to compensate for sporadically lost bytes, ensuring that communication between the Radio and the PC remains synchronized.
 
+---
 
 ## Notes
 - The remote control operates as an **extension of the main programmer/radio protocol**.
