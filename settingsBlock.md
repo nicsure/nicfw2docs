@@ -55,5 +55,7 @@ typedef struct {
     u8 afFilters;               // 0x60
     u8 ifFreq;                  // 0x61
     u8 sBarAlwaysOn;            // 0x62
-    u8 filler[29];
+    u8 lockedVfo                // 0x63
+    u8 vfoLockActive            // 0x64
+    u8 filler[27];
 } settingsBlock;

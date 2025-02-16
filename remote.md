@@ -113,6 +113,26 @@ Bit: FEDCBA9876543210
 - **G (Green)**: 6 bits
 - **R (Red)**: 5 bits
 
+```c
+typedef union
+{
+    u16 value;
+    struct
+    {
+        u16 r : 5;
+        u16 g_lo : 3; // needs to be split as C Compilers don't like bit fields that span byte boundaries
+        u16 g_hi : 3;
+        u16 b : 5;
+    } RGB;
+    struct
+    {
+        // c2 = bbbbbggg
+        // c1 = gggrrrrr
+        u8 c1;
+        u8 c2;
+    } bytes;
+} COLOR;
+```
 ---
 
 ## Host to Radio Packets
@@ -136,6 +156,11 @@ The host sends **single-byte packets** that represent keypad presses. The radio 
 ### Key Release Event (Packet ID: `0xFF`)
 - `0xFF` = No Key (release)
 - The radio only processes one key press at a time.
+
+---
+
+## Desync Protection
+Every packet sent from the Radio to the Host, except for LED status updates, is padded with two null bytes (0x00) at the end. These bytes act as no-operations (NOP) and should be ignored (refer to the main protocol documentation). Their purpose is to compensate for sporadically lost bytes, ensuring that communication between the Radio and the PC remains synchronized.
 
 ---
 
