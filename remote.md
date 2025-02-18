@@ -160,7 +160,14 @@ The host sends **single-byte packets** that represent keypad presses. The radio 
 ---
 
 ## Desync Protection
-Every packet sent from the Radio to the Host, except for LED status updates, is padded with two null bytes (0x00) at the end. These bytes act as no-operations (NOP) and should be ignored (refer to the main protocol documentation). Their purpose is to compensate for sporadically lost bytes, ensuring that communication between the Radio and the PC remains synchronized.
+
+To ensure smooth and uninterrupted communication between the Radio and the Host, every packet transmitted from the Radio to the Host is padded with two additional null bytes (0x00) at the end, with the exception of LED status update packets. These extra bytes serve as no-operation (NOP) bytes, meaning they do not carry any meaningful data and can be safely ignored by the Host system. For more technical details on their handling, refer to the main protocol documentation.
+
+The primary purpose of these extra bytes is to provide a desynchronization buffer that compensates for occasional or sporadic data loss. In real-time communication systems, data bytes may occasionally be dropped, which can cause desynchronization between the Radio and the Host. By adding the padding, these null bytes act as a safeguard, effectively "replacing" the lost bytes. This ensures that synchronization is maintained even when some bytes are lost during transmission.
+
+When such events occur, users may experience a minor visual glitch on the display as a temporary consequence of the lost data. However, the additional padding ensures that the overall communication between the Radio and the PC remains in sync, preventing any lasting or significant disruptions. This technique helps avoid issues such as timing mismatches or data misalignment, which could otherwise impact the performance or visual consistency of the system.
+
+While the NOP bytes are not necessary for the actual data payload, they offer a layer of robustness to the system, improving its resilience against imperfections in the transmission process and reducing the likelihood of noticeable performance degradation. The result is a more stable and reliable data stream between the Radio and the Host, minimizing the impact of sporadic byte loss.
 
 ---
 
