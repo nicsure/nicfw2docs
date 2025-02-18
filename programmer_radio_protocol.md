@@ -64,7 +64,7 @@ struct {
 
 ### NOP - Packet ID `0x00`
 
-- Does nothing, primarily used to keep the communication link active (both directions).
+- Does nothing, primarily used to keep the communication link active and in sync (both directions).
 
 ### Ping - Packet IDs `0x01` & `0x02`
 
