@@ -1,6 +1,8 @@
 # EEPROM Layout
 
-The EEPROM has 8k of space addressed from `0x0000` to `0x1FFF`. All multi-byte values are little-endian.
+The EEPROM has 8k of space addressed from `0x0000` to `0x1FFF`. 
+All multi-byte values are LITTLE-Endian for V2.0X codeplugs.
+All multi-byte values are BIG-Endian for V2.5X codeplugs.
 
 For details on data types, consult the data structure document for the data type.
 
