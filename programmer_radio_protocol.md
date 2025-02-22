@@ -109,7 +109,7 @@ struct {
 ### Request Scan Ignore List - Packet ID `0x43`
 
 ```c
-// note: multi byet values are little endian for V2.0X and big endian for V2.5X
+// note: multi byte values are little endian for V2.0X and big endian for V2.5X
 struct {
     uint8_t packetID; // 0x43
     uint32_t frequencies[50]; // frequencies are in 10 Hz units.
