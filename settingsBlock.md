@@ -58,5 +58,6 @@ typedef struct {
     u8 lockedVfo                // 0x63
     u8 vfoLockActive            // 0x64
     u8 dualWatchDelay;          // 0x65
-    u8 filler[26];
+    u8 subToneDeviation;        // 0x66
+    u8 filler[25];
 } settingsBlock;
