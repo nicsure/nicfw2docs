@@ -26,7 +26,7 @@ struct {
         char sequenceLabel[8]; // null terminated
     } dtmfPresets[20];
     ...
-    uint8_t xtal671; // 0x1DFB
+    int8_t xtal671; // 0x1DFB
     uint8_t maxPowerWattsUHF; // 0x1DFC (0.1W units)
     uint8_t maxPowerSettingUHF; // 0x1DFD
     uint8_t maxPowerWattsVHF; // 0x1DFE (0.1W units)
