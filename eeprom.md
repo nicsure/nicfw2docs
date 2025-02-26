@@ -7,6 +7,7 @@ All multi-byte values are BIG-Endian for V2.5X codeplugs.
 For details on data types, consult the data structure document for the data type.
 
 ## Layout
+(... represents unused space and should be padded with filler bytes)
 
 ```c
 struct {
