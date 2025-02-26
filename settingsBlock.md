@@ -12,7 +12,7 @@ typedef struct {
     u8 txModMeter;              // 0x0d
     u8 micGain;                 // 0x0e
     u8 txDeviation;             // 0x0f
-    s8 xtal671;                 // 0x10
+    s8 xtal671_DEFUNCT;         // 0x10 (no longer used)
     u8 battStyle;               // 0x11
     u16 scanRange;              // 0x12      
     U16 scanPersist;            // 0x14
